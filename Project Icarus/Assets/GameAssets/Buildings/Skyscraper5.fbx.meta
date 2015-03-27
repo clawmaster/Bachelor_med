@@ -1,0 +1,284 @@
+fileFormatVersion: 2
+guid: 96d6e5dc9d08f9f4e95ff8062b910051
+timeCreated: 1427415514
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Core1
+    100002: Core2
+    100004: Core3
+    100006: Core4
+    100008: Core5
+    100010: Core6
+    100012: Core7
+    100014: Core8
+    100016: pPlane1
+    100018: pPlane1 1
+    100020: pPlane1 2
+    100022: pPlane1 3
+    100024: pPlane1 4
+    100026: pPlane1 5
+    100028: pPlane1 6
+    100030: pPlane1 7
+    100032: pPlane2
+    100034: pPlane2 1
+    100036: pPlane2 2
+    100038: pPlane2 3
+    100040: pPlane2 4
+    100042: pPlane2 5
+    100044: pPlane2 6
+    100046: pPlane2 7
+    100048: pPlane3
+    100050: pPlane3 1
+    100052: pPlane3 2
+    100054: pPlane3 3
+    100056: pPlane3 4
+    100058: pPlane3 5
+    100060: pPlane3 6
+    100062: pPlane3 7
+    100064: pPlane4
+    100066: pPlane4 1
+    100068: pPlane4 2
+    100070: pPlane4 3
+    100072: pPlane4 4
+    100074: pPlane4 5
+    100076: pPlane4 6
+    100078: pPlane4 7
+    100080: //RootNode
+    100082: WindowSet1
+    100084: WindowSet2
+    100086: WindowSet2 1
+    100088: WindowSet2 2
+    100090: WindowSet2 3
+    100092: WindowSet2 4
+    100094: WindowSet2 5
+    100096: WindowSet2 6
+    400000: Core1
+    400002: Core2
+    400004: Core3
+    400006: Core4
+    400008: Core5
+    400010: Core6
+    400012: Core7
+    400014: Core8
+    400016: pPlane1
+    400018: pPlane1 1
+    400020: pPlane1 2
+    400022: pPlane1 3
+    400024: pPlane1 4
+    400026: pPlane1 5
+    400028: pPlane1 6
+    400030: pPlane1 7
+    400032: pPlane2
+    400034: pPlane2 1
+    400036: pPlane2 2
+    400038: pPlane2 3
+    400040: pPlane2 4
+    400042: pPlane2 5
+    400044: pPlane2 6
+    400046: pPlane2 7
+    400048: pPlane3
+    400050: pPlane3 1
+    400052: pPlane3 2
+    400054: pPlane3 3
+    400056: pPlane3 4
+    400058: pPlane3 5
+    400060: pPlane3 6
+    400062: pPlane3 7
+    400064: pPlane4
+    400066: pPlane4 1
+    400068: pPlane4 2
+    400070: pPlane4 3
+    400072: pPlane4 4
+    400074: pPlane4 5
+    400076: pPlane4 6
+    400078: pPlane4 7
+    400080: //RootNode
+    400082: WindowSet1
+    400084: WindowSet2
+    400086: WindowSet2 1
+    400088: WindowSet2 2
+    400090: WindowSet2 3
+    400092: WindowSet2 4
+    400094: WindowSet2 5
+    400096: WindowSet2 6
+    2300000: Core1
+    2300002: Core2
+    2300004: Core3
+    2300006: Core4
+    2300008: Core5
+    2300010: Core6
+    2300012: Core7
+    2300014: Core8
+    2300016: pPlane1
+    2300018: pPlane1 1
+    2300020: pPlane1 2
+    2300022: pPlane1 3
+    2300024: pPlane1 4
+    2300026: pPlane1 5
+    2300028: pPlane1 6
+    2300030: pPlane1 7
+    2300032: pPlane2
+    2300034: pPlane2 1
+    2300036: pPlane2 2
+    2300038: pPlane2 3
+    2300040: pPlane2 4
+    2300042: pPlane2 5
+    2300044: pPlane2 6
+    2300046: pPlane2 7
+    2300048: pPlane3
+    2300050: pPlane3 1
+    2300052: pPlane3 2
+    2300054: pPlane3 3
+    2300056: pPlane3 4
+    2300058: pPlane3 5
+    2300060: pPlane3 6
+    2300062: pPlane3 7
+    2300064: pPlane4
+    2300066: pPlane4 1
+    2300068: pPlane4 2
+    2300070: pPlane4 3
+    2300072: pPlane4 4
+    2300074: pPlane4 5
+    2300076: pPlane4 6
+    2300078: pPlane4 7
+    3300000: Core1
+    3300002: Core2
+    3300004: Core3
+    3300006: Core4
+    3300008: Core5
+    3300010: Core6
+    3300012: Core7
+    3300014: Core8
+    3300016: pPlane1
+    3300018: pPlane1 1
+    3300020: pPlane1 2
+    3300022: pPlane1 3
+    3300024: pPlane1 4
+    3300026: pPlane1 5
+    3300028: pPlane1 6
+    3300030: pPlane1 7
+    3300032: pPlane2
+    3300034: pPlane2 1
+    3300036: pPlane2 2
+    3300038: pPlane2 3
+    3300040: pPlane2 4
+    3300042: pPlane2 5
+    3300044: pPlane2 6
+    3300046: pPlane2 7
+    3300048: pPlane3
+    3300050: pPlane3 1
+    3300052: pPlane3 2
+    3300054: pPlane3 3
+    3300056: pPlane3 4
+    3300058: pPlane3 5
+    3300060: pPlane3 6
+    3300062: pPlane3 7
+    3300064: pPlane4
+    3300066: pPlane4 1
+    3300068: pPlane4 2
+    3300070: pPlane4 3
+    3300072: pPlane4 4
+    3300074: pPlane4 5
+    3300076: pPlane4 6
+    3300078: pPlane4 7
+    4300000: Core1
+    4300002: pPlane1
+    4300004: pPlane2
+    4300006: pPlane3
+    4300008: pPlane4
+    4300010: Core2
+    4300012: pPlane1
+    4300014: pPlane2
+    4300016: pPlane3
+    4300018: pPlane4
+    4300020: Core3
+    4300022: pPlane1
+    4300024: pPlane2
+    4300026: pPlane3
+    4300028: pPlane4
+    4300030: Core4
+    4300032: pPlane1
+    4300034: pPlane2
+    4300036: pPlane3
+    4300038: pPlane4
+    4300040: Core5
+    4300042: pPlane1
+    4300044: pPlane2
+    4300046: pPlane3
+    4300048: pPlane4
+    4300050: Core6
+    4300052: pPlane1
+    4300054: pPlane2
+    4300056: pPlane3
+    4300058: pPlane4
+    4300060: Core7
+    4300062: pPlane1
+    4300064: pPlane2
+    4300066: pPlane3
+    4300068: pPlane4
+    4300070: Core8
+    4300072: pPlane1
+    4300074: pPlane2
+    4300076: pPlane3
+    4300078: pPlane4
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
