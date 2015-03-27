@@ -14,6 +14,7 @@ public class Driving : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		mover = this.transform;
 		destination = mover.position; //set the destination to the objects position when the script is run the first time
 		NextCheckpoint[0] = new Vector3(-105,0,-105); NextCheckpoint[1] = new Vector3(-105,0,0); NextCheckpoint[2] = new Vector3(0,0,0);
 
