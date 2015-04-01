@@ -180,6 +180,7 @@ ModelImporter:
     100344: //RootNode
     100346: transform1
     100348: Windows
+    100350: FramRight
     400000: Core
     400002: FrameBack
     400004: FrameFront
@@ -355,6 +356,7 @@ ModelImporter:
     400344: //RootNode
     400346: transform1
     400348: Windows
+    400350: FramRight
     2300000: Core
     2300002: pCube10
     2300004: pCube100
