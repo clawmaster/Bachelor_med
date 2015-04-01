@@ -1,10 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\SpaceShooterTutorial\Assets\Scripts\Mover.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GameAssets\Cars\Scripts\Driving.cs">
     <Files>
-      <File FileName="..\..\SpaceShooterTutorial\Assets\Scripts\GameController.cs" Line="22" Column="14" />
-      <File FileName="..\..\SpaceShooterTutorial\Assets\Scripts\PlayerController.cs" Line="15" Column="2" />
-      <File FileName="..\..\SpaceShooterTutorial\Assets\Scripts\Mover.cs" Line="1" Column="1" />
+      <File FileName="Assets\GameAssets\Cars\Scripts\Spawner.cs" Line="12" Column="38" />
+      <File FileName="Assets\GameAssets\Cars\Scripts\Driving.cs" Line="12" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
