@@ -38,22 +38,41 @@ public class Driving : MonoBehaviour {
 			directionX = 1;
 		}
 
+		if (mover.position.z < 0 && mover.position.x < 0 || mover.position.z > 0 && mover.position.x > 0) 
+		{ // for cars spawning in inner lanes.
+			//Debug.Log("im driving in inner lane");
+			driveStraight [0] = new Vector3 (0 * directionX + mover.position.x, 0, 305 * directionZ + mover.position.z);
+			//Driving in a U, going right at incection 2
+			driveLeft [0] = new Vector3 (0 * directionX + mover.position.x, 0, 133 * directionZ + mover.position.z);
+			driveLeft [1] = new Vector3 (17 * directionX + mover.position.x, 0, 138 * directionZ + mover.position.z);
+			driveLeft [2] = new Vector3 (275 * directionX + mover.position.x, 0, 138 * directionZ + mover.position.z);
+			driveLeft [3] = new Vector3 (281 * directionX + mover.position.x, 0, 161 * directionZ + mover.position.z);
+			driveLeft [4] = new Vector3 (281 * directionX + mover.position.x, 0, 280 * directionZ + mover.position.z);
+			//Driving right at the 2nd intersection
+			driveRight [0] = new Vector3 (0 * directionX + mover.position.x, 0, 133 * directionZ + mover.position.z);
+			driveRight [1] = new Vector3 (17 * directionX + mover.position.x, 0, 138 * directionZ + mover.position.z);
+			driveRight [2] = new Vector3 (268 * directionX + mover.position.x, 0, 138 * directionZ + mover.position.z);
+			driveRight [3] = new Vector3 (266 * directionX + mover.position.x, 0, 129 * directionZ + mover.position.z);
+			driveRight [4] = new Vector3 (266 * directionX + mover.position.x, 0, 0 * directionZ + mover.position.z);
+		} 
+		else //for cars spawning in outer lanes
+		{
 			//Driving straight ahead
-		driveStraight [0] = new Vector3 (0 * directionX + mover.position.x,0, 305 * directionZ + mover.position.z);
-		//Driving in a U, going left at incection 2
-		driveLeft [0] = new Vector3 (0 * directionX + mover.position.x, 0, 149 * directionZ + mover.position.z);
-		driveLeft [1] = new Vector3 (34 * directionX + mover.position.x,0,152 * directionZ + mover.position.z);
-		driveLeft [2] = new Vector3 (293 * directionX + mover.position.x,0,152 * directionZ + mover.position.z);
-		driveLeft [3] = new Vector3 (297 * directionX + mover.position.x,0,140 * directionZ + mover.position.z);
-		driveLeft [4] = new Vector3 (297 * directionX + mover.position.x,0,0 * directionZ + mover.position.z);
-		//Driving right at the 2nd intersection
-		driveRight [0] = new Vector3 (0 * directionX + mover.position.x,0,149 * directionZ + mover.position.z);
-		driveRight [1] = new Vector3 (34 * directionX + mover.position.x,0,152 * directionZ + mover.position.z);
-		driveRight [2] = new Vector3 (279 * directionX + mover.position.x,0,152 * directionZ + mover.position.z);
-		driveRight [3] = new Vector3 (281 * directionX + mover.position.x,0,163 * directionZ + mover.position.z);
-		driveRight [4] = new Vector3 (281 * directionX + mover.position.x,0,305 * directionZ + mover.position.z);
+			driveStraight [0] = new Vector3 (0 * directionX + mover.position.x, 0, 305 * directionZ + mover.position.z);
+			//Driving in a U, going left at incection 2
+			driveLeft [0] = new Vector3 (0 * directionX + mover.position.x, 0, 149 * directionZ + mover.position.z);
+			driveLeft [1] = new Vector3 (34 * directionX + mover.position.x, 0, 152 * directionZ + mover.position.z);
+			driveLeft [2] = new Vector3 (293 * directionX + mover.position.x, 0, 152 * directionZ + mover.position.z);
+			driveLeft [3] = new Vector3 (297 * directionX + mover.position.x, 0, 140 * directionZ + mover.position.z);
+			driveLeft [4] = new Vector3 (297 * directionX + mover.position.x, 0, 0 * directionZ + mover.position.z);
+			//Driving right at the 2nd intersection
+			driveRight [0] = new Vector3 (0 * directionX + mover.position.x, 0, 149 * directionZ + mover.position.z);
+			driveRight [1] = new Vector3 (34 * directionX + mover.position.x, 0, 152 * directionZ + mover.position.z);
+			driveRight [2] = new Vector3 (279 * directionX + mover.position.x, 0, 152 * directionZ + mover.position.z);
+			driveRight [3] = new Vector3 (281 * directionX + mover.position.x, 0, 163 * directionZ + mover.position.z);
+			driveRight [4] = new Vector3 (281 * directionX + mover.position.x, 0, 305 * directionZ + mover.position.z);
 
-
+		}
 
 		// adjusting for group cars (there is 3 roads systems, which is dedicated to current car cased on group)
 		groupCars = Random.Range (1, 4);
@@ -86,7 +105,7 @@ public class Driving : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//accelerate the car.
-		Debug.Log (Mathf.Abs(Vector3.Distance(destination,mover.position)));
+		//Debug.Log (Mathf.Abs(Vector3.Distance(destination,mover.position)));
 		if (Mathf.Abs(Vector3.Distance(destination,mover.position)) > 25.0 && speed < 30) 
 		{
 			speed = speed + 1;
@@ -111,13 +130,19 @@ public class Driving : MonoBehaviour {
 		//check for giving a new checkpoint.
 		if (mover.position == destination)
 		{
-			currentCheckPoint = currentCheckPoint + 1;
-			if(NextCheckpoint.Length < currentCheckPoint)
+			//Debug.Log("length of checkpoints: " + NextCheckpoint.Length + " CurrentCheckpoint: " + currentCheckPoint);
+			currentCheckPoint = currentCheckPoint + 1;	
+			if(NextCheckpoint.Length > currentCheckPoint)
+				{
+					destination = NextCheckpoint[currentCheckPoint];
+				}
+				else
 				{
 					Destroy (this.gameObject);
+					this.enabled=false;
+					//Debug.Log ("a car have been removed");
 				}
-			
-			destination = NextCheckpoint[currentCheckPoint];
+
 		}
 
 		// moves the object.
