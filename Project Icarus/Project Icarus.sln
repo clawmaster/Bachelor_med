@@ -5,6 +5,8 @@ Project("{06A49365-B179-CF49-7786-1BA4F3AB9394}") = "Project Icarus", "Assembly-
 EndProject
 Project("{06A49365-B179-CF49-7786-1BA4F3AB9394}") = "Project Icarus", "Assembly-CSharp-Editor.csproj", "{E705DD51-314F-BE2E-325D-C45501C00FAF}"
 EndProject
+Project("{06A49365-B179-CF49-7786-1BA4F3AB9394}") = "Project Icarus", "Assembly-UnityScript.unityproj", "{3C3BC5EC-C4DE-D6CD-7CA6-580A3C240C42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,11 +21,15 @@ Global
 		{E705DD51-314F-BE2E-325D-C45501C00FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E705DD51-314F-BE2E-325D-C45501C00FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E705DD51-314F-BE2E-325D-C45501C00FAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C3BC5EC-C4DE-D6CD-7CA6-580A3C240C42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C3BC5EC-C4DE-D6CD-7CA6-580A3C240C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C3BC5EC-C4DE-D6CD-7CA6-580A3C240C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C3BC5EC-C4DE-D6CD-7CA6-580A3C240C42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																										GlobalSection(MonoDevelopProperties) = preSolution
+																																																GlobalSection(MonoDevelopProperties) = preSolution
 =======
 										GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> origin/master
