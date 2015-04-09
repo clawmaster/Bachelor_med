@@ -68,6 +68,9 @@ ModelImporter:
     100120: Railing2
     100122: //RootNode
     100124: Windows
+    100126: polySurface1
+    100128: Roof
+    100130: transform1
     400000: Core
     400002: pCylinder1
     400004: pCylinder1 1
@@ -131,6 +134,9 @@ ModelImporter:
     400120: Railing2
     400122: //RootNode
     400124: Windows
+    400126: polySurface1
+    400128: Roof
+    400130: transform1
     2300000: Core
     2300002: pCylinder1
     2300004: pCylinder1 1
@@ -190,6 +196,8 @@ ModelImporter:
     2300112: pPlane7
     2300114: pPlane8
     2300116: pPlane9
+    2300118: polySurface1
+    2300120: Roof
     3300000: Core
     3300002: pCylinder1
     3300004: pCylinder1 1
@@ -249,6 +257,8 @@ ModelImporter:
     3300112: pPlane7
     3300114: pPlane8
     3300116: pPlane9
+    3300118: polySurface1
+    3300120: Roof
     4300000: pCylinder24
     4300002: pCylinder23
     4300004: pCylinder22
@@ -308,6 +318,8 @@ ModelImporter:
     4300112: pPlane2
     4300114: pPlane1
     4300116: Core
+    4300118: polySurface1
+    4300120: Roof
     9500000: //RootNode
   materials:
     importMaterials: 1
