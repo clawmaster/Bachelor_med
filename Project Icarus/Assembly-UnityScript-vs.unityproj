@@ -49,6 +49,7 @@
      <Compile Include="Assets\GameAssets\raginbear\01_streetProps\demo\code\CharacterMotor.js" />
      <Compile Include="Assets\GameAssets\raginbear\01_streetProps\demo\code\FPSInputController.js" />
      <None Include="Assets\Plugins\donotdelete.txt" />
+     <None Include="Assets\GameAssets\plants\dd\AlphaTest-Bumped.shader" />
      <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
      <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
      <None Include="Assets\GameAssets\raginbear\shaders\rb_glass_01.shader" />
@@ -57,6 +58,7 @@
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
      <None Include="Assets\GameAssets\Urban_Props\readme.txt" />
+     <None Include="Assets\GameAssets\Ornamental Flower Set\Shaders\Transparent-BumpSpecNoCull.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

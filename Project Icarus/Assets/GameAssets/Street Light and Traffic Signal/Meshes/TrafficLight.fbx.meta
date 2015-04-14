@@ -3,7 +3,12 @@ guid: b1b822bcb08294be5a3bdc826fb3e4db
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: utd_trafficlights
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 3

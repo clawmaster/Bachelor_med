@@ -51,6 +51,7 @@
      <Compile Include="Assets\OVR\Editor\OVRPrefabs.cs" />
      <Compile Include="Assets\OVR\Editor\OVRShimLoader.cs" />
      <None Include="Assets\Plugins\donotdelete.txt" />
+     <None Include="Assets\GameAssets\plants\dd\AlphaTest-Bumped.shader" />
      <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
      <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
      <None Include="Assets\GameAssets\raginbear\shaders\rb_glass_01.shader" />
@@ -59,6 +60,7 @@
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
      <None Include="Assets\GameAssets\Urban_Props\readme.txt" />
+     <None Include="Assets\GameAssets\Ornamental Flower Set\Shaders\Transparent-BumpSpecNoCull.shader" />
  <Reference Include="Assembly-UnityScript">
  <HintPath>C:/Users/Mathias/Desktop/School/Unity Projects/Bachelor_med/Project Icarus/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
