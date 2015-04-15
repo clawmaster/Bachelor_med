@@ -62,7 +62,7 @@
      <None Include="Assets\GameAssets\Urban_Props\readme.txt" />
      <None Include="Assets\GameAssets\Ornamental Flower Set\Shaders\Transparent-BumpSpecNoCull.shader" />
  <Reference Include="Assembly-UnityScript">
- <HintPath>C:/Users/Mathias/Desktop/School/Unity Projects/Bachelor_med/Project Icarus/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>C:/Users/Claes/Desktop/Github repos/Bachelor_med/Project Icarus/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

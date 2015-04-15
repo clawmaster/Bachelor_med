@@ -3,14 +3,30 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour {
 
+	public Transform HifiCar;
+	public Transform LowfiCar;
 	public Transform car;
 	private Vector3[] spawnPoints = new Vector3[12];
 	private float timer;
 	private int randomSpawn;
+	public string sceneName;
 
 
 	// Use this for initialization
 	void Start () {
+
+		Debug.Log (Application.loadedLevelName);
+		sceneName = Application.loadedLevelName;
+
+		if(sceneName == "LoFi Scene")
+		{
+			car = LowfiCar;
+		}
+		else
+		{
+			car = HifiCar;
+		}
+
 		//outer lane spawn
 		spawnPoints [0] = new Vector3 (-123, 0, 149);
 		spawnPoints [1] = new Vector3 (-118, 0, 154);
