@@ -4,8 +4,12 @@ using System.Collections;
 public class Spawner : MonoBehaviour {
 
 	public Transform HifiCar;
-	public Transform LowfiCar;
+	public Transform LowfiCarGreen;
+	public Transform LowfiCarRed;
+	public Transform LowfiCarYellow;
+	private Transform[] LowfiCar = new Transform[3];
 	public Transform car;
+	private int whatmodelCar;
 	private Vector3[] spawnPoints = new Vector3[12];
 	private float timer;
 	private int randomSpawn;
@@ -17,10 +21,14 @@ public class Spawner : MonoBehaviour {
 
 		Debug.Log (Application.loadedLevelName);
 		sceneName = Application.loadedLevelName;
+		
+		LowfiCar[0] = LowfiCarGreen;
+		LowfiCar[1] = LowfiCarRed;
+		LowfiCar[2] = LowfiCarYellow;
 
 		if(sceneName == "LoFi Scene")
 		{
-			car = LowfiCar;
+			car = LowfiCar[whatmodelCar];
 		}
 		else
 		{
@@ -50,12 +58,24 @@ public class Spawner : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+// spawning Cars prefab randomly.
+		whatmodelCar = Random.Range (0,3);
+		//Debug.Log(whatmodelCar);
+		if(sceneName == "LoFi Scene")
+		{
+			car = LowfiCar[whatmodelCar];
+		}
+		else
+		{
+			car = HifiCar;
+		}
 
+		//making timer that spawns car.
 		if (timer < Time.time) 
 		{
 			randomSpawn = Random.Range (0, 12);
 			Instantiate(car,spawnPoints[randomSpawn],Quaternion.identity);
-			timer = Time.time + 5;
+			timer = Time.time + 1;
 		}
 
 	

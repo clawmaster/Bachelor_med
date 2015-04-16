@@ -4,9 +4,10 @@ using System.Collections;
 public class Driving : MonoBehaviour {
 
 	public Transform mover; //the object being moved
-	private int speed = 5;
+	private int speed = 30;
 	public float SnapTo = 0.5f; //how close we get before snapping to the desination
 	private Vector3 destination = Vector3.zero; //where we want to move
+	private RaycastHit objectHit; //uses a ray forward preventing movement if hitting something.
 
 	// possible movement patterns.
 	private int groupCars;
@@ -99,21 +100,23 @@ public class Driving : MonoBehaviour {
 		//providing it with the wanted way of going.
 		destination = NextCheckpoint[0];
 
+		this.transform.LookAt(destination);
+
 
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		//accelerate the car.
 		//Debug.Log (Mathf.Abs(Vector3.Distance(destination,mover.position)));
-		if (Mathf.Abs(Vector3.Distance(destination,mover.position)) > 25.0 && speed < 30) 
-		{
-			speed = speed + 1;
-		} 
-		else if (speed > 5) 
-		{
-			speed = speed - 1;
-		}
+//		if (Vector3.Distance(destination,mover.position) > 25.0 && speed < 30) 
+//		{
+//			speed = speed + 1;
+//		} 
+//		else if (speed > 5) 
+//		{
+//			speed = speed - 1;
+//		}
 			//makes character look at mouse
 		Vector3 newRotation = Quaternion.LookRotation(destination - mover.position).eulerAngles;
 		newRotation.x = 0;
@@ -121,10 +124,10 @@ public class Driving : MonoBehaviour {
 		newRotation.y = newRotation.y - 180;
 		Quaternion QnewRotation = Quaternion.Euler(newRotation);
 		//Bringing car to stop if need to turn. 
-		if (mover.rotation != QnewRotation) 
-		{
-			speed = 5;
-		}
+//		if (mover.rotation != QnewRotation) 
+//		{
+//			speed = 5;
+//		}
 		mover.rotation = Quaternion.Lerp(mover.rotation,QnewRotation,Time.deltaTime * speed);
 
 		//check for giving a new checkpoint.
@@ -146,11 +149,23 @@ public class Driving : MonoBehaviour {
 		}
 
 		// moves the object.
+		Debug.DrawRay(transform.position, -transform.forward*10, Color.green);
 		if (Vector3.Distance (mover.position, destination) < SnapTo) { //are we within snap range?
 			mover.position = destination; //snap to destination
-		}else
+		}
+		else if (Physics.Raycast(transform.position, -transform.forward, out objectHit, 10)) 
 		{
-			mover.position = Vector3.MoveTowards (mover.transform.position, destination, Time.deltaTime * speed); //move toward destination
+			Debug.Log("Raycast hitted to: " + objectHit.collider);
+			//speed = 0;
+		}
+		else
+		{
+			if(speed == 0)
+			{
+				speed = 8;
+			}
+			transform.Translate(Vector3.back * Time.deltaTime*speed);
+			//mover.position = Vector3.MoveTowards (mover.transform.position, destination, Time.deltaTime * speed); //move toward destination
 		}
 	
 	}
