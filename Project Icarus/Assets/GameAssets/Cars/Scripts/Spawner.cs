@@ -3,7 +3,10 @@ using System.Collections;
 
 public class Spawner : MonoBehaviour {
 
-	public Transform HifiCar;
+	public Transform HifiCartruck;
+	public Transform HifiCarShingle;
+	public Transform HifiCarShellbyGreen;
+	private Transform[] HifiCar = new Transform[3];
 	public Transform LowfiCarGreen;
 	public Transform LowfiCarRed;
 	public Transform LowfiCarYellow;
@@ -26,14 +29,18 @@ public class Spawner : MonoBehaviour {
 		LowfiCar[1] = LowfiCarRed;
 		LowfiCar[2] = LowfiCarYellow;
 
-		if(sceneName == "LoFi Scene")
-		{
-			car = LowfiCar[whatmodelCar];
-		}
-		else
-		{
-			car = HifiCar;
-		}
+		HifiCar[0] = HifiCarShellbyGreen;
+		HifiCar[1] = HifiCarShingle;
+		HifiCar[2] = HifiCartruck;
+
+//		if(sceneName == "LoFi Scene")
+//		{
+//			car = LowfiCar[whatmodelCar];
+//		}
+//		else
+//		{
+//			car = HifiCar[whatmodelCar];
+//		}
 
 		//outer lane spawn
 		spawnPoints [0] = new Vector3 (-123, 0, 149);
@@ -67,7 +74,7 @@ public class Spawner : MonoBehaviour {
 		}
 		else
 		{
-			car = HifiCar;
+			car = HifiCar[whatmodelCar];
 		}
 
 		//making timer that spawns car.
