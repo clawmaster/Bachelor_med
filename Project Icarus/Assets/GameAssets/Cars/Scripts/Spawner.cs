@@ -57,7 +57,7 @@ public class Spawner : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 // spawning Cars prefab randomly.
 		whatmodelCar = Random.Range (0,3);
 		//Debug.Log(whatmodelCar);

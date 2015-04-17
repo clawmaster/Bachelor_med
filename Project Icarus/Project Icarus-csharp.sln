@@ -1,6 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{06A49365-B179-CF49-7786-1BA4F3AB9394}") = "Project Icarus", "Assembly-CSharp-firstpass-vs.csproj", "{30D2E931-0B0A-EAA0-DBA9-030DD1E4CBFB}"
+EndProject
 Project("{06A49365-B179-CF49-7786-1BA4F3AB9394}") = "Project Icarus", "Assembly-CSharp-vs.csproj", "{4F635F55-1009-37EF-5266-848DB1CEDD3F}"
 EndProject
 Project("{06A49365-B179-CF49-7786-1BA4F3AB9394}") = "Project Icarus", "Assembly-CSharp-Editor-vs.csproj", "{E705DD51-314F-BE2E-325D-C45501C00FAF}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30D2E931-0B0A-EAA0-DBA9-030DD1E4CBFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30D2E931-0B0A-EAA0-DBA9-030DD1E4CBFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30D2E931-0B0A-EAA0-DBA9-030DD1E4CBFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30D2E931-0B0A-EAA0-DBA9-030DD1E4CBFB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4F635F55-1009-37EF-5266-848DB1CEDD3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4F635F55-1009-37EF-5266-848DB1CEDD3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F635F55-1009-37EF-5266-848DB1CEDD3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,7 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																															GlobalSection(MonoDevelopProperties) = preSolution
+																																																																					GlobalSection(MonoDevelopProperties) = preSolution
 =======
 										GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> origin/master

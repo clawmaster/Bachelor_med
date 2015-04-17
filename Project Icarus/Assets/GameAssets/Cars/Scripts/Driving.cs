@@ -4,7 +4,7 @@ using System.Collections;
 public class Driving : MonoBehaviour {
 
 	public Transform mover; //the object being moved
-	private int speed = 30;
+	private int speed = 10;
 	public float SnapTo = 0.5f; //how close we get before snapping to the desination
 	private Vector3 destination = Vector3.zero; //where we want to move
 	private RaycastHit objectHit; //uses a ray forward preventing movement if hitting something.
@@ -19,6 +19,9 @@ public class Driving : MonoBehaviour {
 	private Vector3[] driveRight = new Vector3[5];
 	private int currentCheckPoint = 0;
 
+	//Corutine checks every 3 second if car have moved proberly far enough.
+	private Vector3 coOldPosition;
+	private float timer;
 
 	// Use this for initialization
 	void Start () {
@@ -44,14 +47,14 @@ public class Driving : MonoBehaviour {
 			//Debug.Log("im driving in inner lane");
 			driveStraight [0] = new Vector3 (0 * directionX + mover.position.x, 0, 305 * directionZ + mover.position.z);
 			//Driving in a U, going right at incection 2
-			driveLeft [0] = new Vector3 (0 * directionX + mover.position.x, 0, 133 * directionZ + mover.position.z);
-			driveLeft [1] = new Vector3 (17 * directionX + mover.position.x, 0, 138 * directionZ + mover.position.z);
-			driveLeft [2] = new Vector3 (275 * directionX + mover.position.x, 0, 138 * directionZ + mover.position.z);
+			driveLeft [0] = new Vector3 (0 * directionX + mover.position.x, 0, 135 * directionZ + mover.position.z);
+			driveLeft [1] = new Vector3 (17 * directionX + mover.position.x, 0, 137 * directionZ + mover.position.z);
+			driveLeft [2] = new Vector3 (277 * directionX + mover.position.x, 0, 138 * directionZ + mover.position.z);
 			driveLeft [3] = new Vector3 (281 * directionX + mover.position.x, 0, 161 * directionZ + mover.position.z);
 			driveLeft [4] = new Vector3 (281 * directionX + mover.position.x, 0, 280 * directionZ + mover.position.z);
 			//Driving right at the 2nd intersection
-			driveRight [0] = new Vector3 (0 * directionX + mover.position.x, 0, 133 * directionZ + mover.position.z);
-			driveRight [1] = new Vector3 (17 * directionX + mover.position.x, 0, 138 * directionZ + mover.position.z);
+			driveRight [0] = new Vector3 (0 * directionX + mover.position.x, 0, 135 * directionZ + mover.position.z);
+			driveRight [1] = new Vector3 (17 * directionX + mover.position.x, 0, 137 * directionZ + mover.position.z);
 			driveRight [2] = new Vector3 (268 * directionX + mover.position.x, 0, 138 * directionZ + mover.position.z);
 			driveRight [3] = new Vector3 (266 * directionX + mover.position.x, 0, 129 * directionZ + mover.position.z);
 			driveRight [4] = new Vector3 (266 * directionX + mover.position.x, 0, 0 * directionZ + mover.position.z);
@@ -93,7 +96,7 @@ public class Driving : MonoBehaviour {
 			break;
 		}
 
-		Debug.Log(" groupcars: " + groupCars);
+		//Debug.Log(" groupcars: " + groupCars);
 		
 		destination = mover.position; //set the destination to the objects position when the script is run the first time
 
@@ -102,7 +105,12 @@ public class Driving : MonoBehaviour {
 
 		this.transform.LookAt(destination);
 
-
+		// giving a small difference in car speeds
+		speed = speed + Random.Range(0,4);
+		// corutine checking if car is not moving forward as it should.
+		coOldPosition = mover.position;
+		timer = Time.time + 5;
+		StartCoroutine(isMoving(mover));
 	}
 	
 	// Update is called once per frame
@@ -168,5 +176,24 @@ public class Driving : MonoBehaviour {
 			//mover.position = Vector3.MoveTowards (mover.transform.position, destination, Time.deltaTime * speed); //move toward destination
 		}
 	
+	}
+	//CoRutine 
+	IEnumerator isMoving(Transform car)
+	{
+		while(true)
+		{
+
+			if(timer < Time.time)
+			{
+				//Debug.Log("ive started corutine");
+				if(Vector3.Distance(car.position,coOldPosition)<10)
+					{
+					Destroy (this.gameObject);
+					this.enabled=false;
+					}
+				coOldPosition = car.position;
+			}
+			yield return new WaitForSeconds(6f);
+		}
 	}
 }
