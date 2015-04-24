@@ -157,13 +157,13 @@ public class Driving : MonoBehaviour {
 		}
 
 		// moves the object.
-		Debug.DrawRay(transform.position, -transform.forward*10, Color.green);
+		//Debug.DrawRay(transform.position, -transform.forward*10, Color.green);
 		if (Vector3.Distance (mover.position, destination) < SnapTo) { //are we within snap range?
 			mover.position = destination; //snap to destination
 		}
 		else if (Physics.Raycast(transform.position, -transform.forward, out objectHit, 10)) 
 		{
-			Debug.Log("Raycast hitted to: " + objectHit.collider);
+			//Debug.Log("Raycast hitted to: " + objectHit.collider);
 			//speed = 0;
 		}
 		else
