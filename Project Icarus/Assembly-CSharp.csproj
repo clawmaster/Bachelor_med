@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\GameAssets\Cars\Scripts\Driving.cs" />
      <Compile Include="Assets\GameAssets\Cars\Scripts\Spawner.cs" />
+     <Compile Include="Assets\GameAssets\Streets\Pedestrian\Movement.cs" />
+     <Compile Include="Assets\GameAssets\Streets\Pedestrian\pedestrianSpawner.cs" />
      <Compile Include="Assets\GameAssets\raginbear\01_streetProps\demo\code\CameraSwitch.cs" />
      <Compile Include="Assets\GameAssets\raginbear\01_streetProps\demo\code\MouseLook.cs" />
      <Compile Include="Assets\GameAssets\raginbear\01_streetProps\demo\code\maxCamera.cs" />
