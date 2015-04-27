@@ -1,0 +1,144 @@
+fileFormatVersion: 2
+guid: 9be7be9d13f7e9f45b3527c8acd68377
+timeCreated: 1430082387
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Billboard
+    100002: Core
+    100004: Sign
+    100006: //RootNode
+    100008: Support
+    100010: Support1
+    100012: Support2
+    100014: Support3
+    100016: Support4
+    100018: SupportDiagonal
+    100020: SupportDiagonal 1
+    100022: SupportDiagonal 2
+    100024: SupportDiagonal 3
+    100026: SupportDiagonal 4
+    100028: SupportVertical
+    100030: SupportVertical 1
+    100032: SupportVertical 2
+    100034: SupportVertical 3
+    100036: SupportVertical 4
+    100038: Windows
+    400000: Billboard
+    400002: Core
+    400004: Sign
+    400006: //RootNode
+    400008: Support
+    400010: Support1
+    400012: Support2
+    400014: Support3
+    400016: Support4
+    400018: SupportDiagonal
+    400020: SupportDiagonal 1
+    400022: SupportDiagonal 2
+    400024: SupportDiagonal 3
+    400026: SupportDiagonal 4
+    400028: SupportVertical
+    400030: SupportVertical 1
+    400032: SupportVertical 2
+    400034: SupportVertical 3
+    400036: SupportVertical 4
+    400038: Windows
+    2300000: Core
+    2300002: Sign
+    2300004: SupportDiagonal
+    2300006: SupportDiagonal 1
+    2300008: SupportDiagonal 2
+    2300010: SupportDiagonal 3
+    2300012: SupportDiagonal 4
+    2300014: SupportVertical
+    2300016: SupportVertical 1
+    2300018: SupportVertical 2
+    2300020: SupportVertical 3
+    2300022: SupportVertical 4
+    2300024: Windows
+    3300000: Core
+    3300002: Sign
+    3300004: SupportDiagonal
+    3300006: SupportDiagonal 1
+    3300008: SupportDiagonal 2
+    3300010: SupportDiagonal 3
+    3300012: SupportDiagonal 4
+    3300014: SupportVertical
+    3300016: SupportVertical 1
+    3300018: SupportVertical 2
+    3300020: SupportVertical 3
+    3300022: SupportVertical 4
+    3300024: Windows
+    4300000: Core
+    4300002: Sign
+    4300004: SupportVertical
+    4300006: SupportDiagonal
+    4300008: SupportVertical
+    4300010: SupportDiagonal
+    4300012: SupportVertical
+    4300014: SupportDiagonal
+    4300016: SupportVertical
+    4300018: SupportDiagonal
+    4300020: SupportVertical
+    4300022: SupportDiagonal
+    4300024: Windows
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
