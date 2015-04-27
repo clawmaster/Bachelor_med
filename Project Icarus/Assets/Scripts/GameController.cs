@@ -4,12 +4,16 @@ using System.Collections;
 public class GameController : MonoBehaviour {
 
 	public float waitingTime;
+	public float introTiming;
+	public AudioClip introSound;
 
 	private float currentTime;
+	private bool introPlaying;
 
 	void Start () {
 
 		waitingTime = Time.time + waitingTime;
+		introTiming = Time.time + introTiming;
 
 	}
 	
@@ -20,6 +24,14 @@ public class GameController : MonoBehaviour {
 
 			Application.LoadLevel("LoFi Scene");
 
+		}
+
+		if (Time.time > introTiming && introPlaying == false)
+		{
+			
+			GetComponent<AudioSource>().PlayOneShot (introSound);
+			introPlaying = true;
+			
 		}
 
 	}

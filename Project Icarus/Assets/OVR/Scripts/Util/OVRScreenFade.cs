@@ -101,24 +101,29 @@ public class OVRScreenFade : MonoBehaviour
 			fadeMaterial.color = color;
 		}
 		isFading = false;
+		Debug.Log("ive fadded in");
 		yield return new WaitForSeconds(SceneLengthTime - fadeTimeOut - elapsedTime);
+		Debug.Log("ive waited for the neq fadding");
 		StartCoroutine(FadeOut());
 	}
 	// makes it fade out after decided time
 	IEnumerator FadeOut()
 	{
 		float currentTime = Time.time;
+		Debug.Log(currentTime);
 		float elapsedTime = 0.0f;
 		Color color = fadeMaterial.color = fadeColor;
-		isFading = true;
+		//isFading = true;
+		Debug.Log("fadding started 2");
 		while (elapsedTime < fadeTimeOut)
 		{
 			yield return new WaitForEndOfFrame();
-			elapsedTime += Time.deltaTime - currentTime;
-			color.a = 1.0f - Mathf.Clamp01(fadeTimeOut / fadeTimeOut - elapsedTime);
+			elapsedTime += Time.deltaTime;
+			color.a = 1.0f - Mathf.Clamp01(fadeTimeOut / (fadeTimeOut - elapsedTime));
 			fadeMaterial.color = color;
+			Debug.Log(color.a);
 		}
-		isFading = false;
+		//isFading = false;
 	}
 
 	/// <summary>
