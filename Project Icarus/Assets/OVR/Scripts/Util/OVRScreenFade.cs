@@ -113,13 +113,13 @@ public class OVRScreenFade : MonoBehaviour
 		Debug.Log(currentTime);
 		float elapsedTime = 0.0f;
 		Color color = fadeMaterial.color = fadeColor;
-		//isFading = true;
+		isFading = true;
 		Debug.Log("fadding started 2");
 		while (elapsedTime < fadeTimeOut)
 		{
 			yield return new WaitForEndOfFrame();
 			elapsedTime += Time.deltaTime;
-			color.a = 1.0f - Mathf.Clamp01(fadeTimeOut / (fadeTimeOut - elapsedTime));
+			color.a = Mathf.Clamp01(elapsedTime / fadeTimeOut);
 			fadeMaterial.color = color;
 			Debug.Log(color.a);
 		}
@@ -136,8 +136,8 @@ public class OVRScreenFade : MonoBehaviour
 			fadeMaterial.SetPass(0);
 			GL.PushMatrix();
 			GL.LoadOrtho();
-			GL.Color(fadeMaterial.color);
 			GL.Begin(GL.QUADS);
+			GL.Color(fadeMaterial.color);
 			GL.Vertex3(0f, 0f, -12f);
 			GL.Vertex3(0f, 1f, -12f);
 			GL.Vertex3(1f, 1f, -12f);
