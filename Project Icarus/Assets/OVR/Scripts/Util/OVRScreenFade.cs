@@ -30,7 +30,11 @@ public class OVRScreenFade : MonoBehaviour
 	/// <summary>
 	/// How long it takes to fade.
 	/// </summary>
-	public float fadeTime = 2.0f;
+	public float fadeTimeIn = 2.0f;
+	public float fadeTimeOut = 2.0f;
+
+	///At what time should fadeOut start after start of scene (seconds)
+	public float SceneLengthTime = 300f;
 
 	/// <summary>
 	/// The initial screen color.
@@ -89,11 +93,29 @@ public class OVRScreenFade : MonoBehaviour
 		float elapsedTime = 0.0f;
 		Color color = fadeMaterial.color = fadeColor;
 		isFading = true;
-		while (elapsedTime < fadeTime)
+		while (elapsedTime < fadeTimeIn)
 		{
 			yield return new WaitForEndOfFrame();
 			elapsedTime += Time.deltaTime;
-			color.a = 1.0f - Mathf.Clamp01(elapsedTime / fadeTime);
+			color.a = 1.0f - Mathf.Clamp01(elapsedTime / fadeTimeIn);
+			fadeMaterial.color = color;
+		}
+		isFading = false;
+		yield return new WaitForSeconds(SceneLengthTime - fadeTimeOut - elapsedTime);
+		StartCoroutine(FadeOut());
+	}
+	// makes it fade out after decided time
+	IEnumerator FadeOut()
+	{
+		float currentTime = Time.time;
+		float elapsedTime = 0.0f;
+		Color color = fadeMaterial.color = fadeColor;
+		isFading = true;
+		while (elapsedTime < fadeTimeOut)
+		{
+			yield return new WaitForEndOfFrame();
+			elapsedTime += Time.deltaTime - currentTime;
+			color.a = 1.0f - Mathf.Clamp01(fadeTimeOut / fadeTimeOut - elapsedTime);
 			fadeMaterial.color = color;
 		}
 		isFading = false;
