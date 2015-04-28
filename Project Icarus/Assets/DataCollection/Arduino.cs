@@ -28,7 +28,7 @@ public class Arduino : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//getting files in directory
-		var info = new DirectoryInfo(Application.dataPath + @"/Data/");
+		var info = new DirectoryInfo(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + @"/Data/");
 		var fileInfo = info.GetFiles();
 		foreach (var file in fileInfo) Debug.Log(file);
 
@@ -96,7 +96,7 @@ public class Arduino : MonoBehaviour {
 		
 //		string filepath = Application.dataPath + @"/Data/xmldata2.xml";
 //		Debug.Log (filepath);
-		string filepath = Application.dataPath + (@"" + filename + ".xml") ;
+		string filepath = Application.dataPath + (System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + @"/Data/") ;
 		XmlDocument xmlDoc = new XmlDocument();
 		
 		if(File.Exists (filepath))
