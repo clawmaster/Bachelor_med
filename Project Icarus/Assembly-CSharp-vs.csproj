@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DataCollection\Arduino.cs" />
      <Compile Include="Assets\GameAssets\Cars\Scripts\Driving.cs" />
      <Compile Include="Assets\GameAssets\Cars\Scripts\Spawner.cs" />
      <Compile Include="Assets\GameAssets\Streets\Pedestrian\Movement.cs" />
