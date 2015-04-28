@@ -96,7 +96,7 @@ public class Arduino : MonoBehaviour {
 		
 //		string filepath = Application.dataPath + @"/Data/xmldata2.xml";
 //		Debug.Log (filepath);
-		string filepath = Application.dataPath + (@"/Data/" + filename + ".xml") ;
+		string filepath = Application.dataPath + (@"" + filename + ".xml") ;
 		XmlDocument xmlDoc = new XmlDocument();
 		
 		if(File.Exists (filepath))
