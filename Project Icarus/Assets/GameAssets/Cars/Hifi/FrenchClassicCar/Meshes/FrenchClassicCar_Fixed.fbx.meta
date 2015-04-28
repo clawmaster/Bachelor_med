@@ -1,15 +1,22 @@
 fileFormatVersion: 2
-guid: ecf198ca2b68fb74f8441090c89d54ea
+guid: 65bba46b43f7f7d4492bff44a370ab15
+timeCreated: 1430175581
+licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: diamond
-    400000: //RootNode
-    400002: diamond
-    2300000: diamond
-    3300000: diamond
-    4300000: diamond
+    100000: FrenchClassicCar_2
+    100002: //RootNode
+    100004: Glas
+    400000: FrenchClassicCar_2
+    400002: //RootNode
+    400004: Glas
+    2300000: FrenchClassicCar_2
+    2300002: Glas
+    3300000: FrenchClassicCar_2
+    3300002: Glas
+    4300000: FrenchClassicCar_2
+    4300002: Glas
   materials:
     importMaterials: 1
     materialName: 0

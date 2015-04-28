@@ -4,13 +4,27 @@ using System.Collections;
 public class Spawner : MonoBehaviour {
 
 	public Transform HifiCartruck;
+	public Transform HifiCartruckBlack;
+	public Transform HifiCartruckBrown;
 	public Transform HifiCarShingle;
+	public Transform HifiCarShingleBlue;
+	public Transform HifiCarShingleGold;
 	public Transform HifiCarShellbyGreen;
-	private Transform[] HifiCar = new Transform[3];
+	public Transform HifiCarShellbyBlue;
+	public Transform HifiCarShellbySilver;
+	public Transform HifiCarShellbyBlack;
+	private Transform[] HifiCar = new Transform[10];
 	public Transform LowfiCarGreen;
 	public Transform LowfiCarRed;
 	public Transform LowfiCarYellow;
-	private Transform[] LowfiCar = new Transform[3];
+	public Transform LowfiCarBrown;
+	public Transform LowfiCarBlack;
+	public Transform LowfiCarSilver;
+	public Transform LowfiCarWhite;
+	public Transform LowfiCarGrey;
+	public Transform LowfiCarBlue;
+	public Transform LowfiCarOrange;
+	private Transform[] LowfiCar = new Transform[10];
 	public Transform car;
 	private int whatmodelCar;
 	private Vector3[] spawnPoints = new Vector3[12];
@@ -28,10 +42,24 @@ public class Spawner : MonoBehaviour {
 		LowfiCar[0] = LowfiCarGreen;
 		LowfiCar[1] = LowfiCarRed;
 		LowfiCar[2] = LowfiCarYellow;
+		LowfiCar[3] = LowfiCarBrown;
+		LowfiCar[4] = LowfiCarBlack;
+		LowfiCar[5] = LowfiCarSilver;
+		LowfiCar[6] = LowfiCarWhite;
+		LowfiCar[7] = LowfiCarGrey;
+		LowfiCar[8] = LowfiCarBlue;
+		LowfiCar[9] = LowfiCarOrange;
 
 		HifiCar[0] = HifiCarShellbyGreen;
-		HifiCar[1] = HifiCarShingle;
-		HifiCar[2] = HifiCartruck;
+		HifiCar[1] = HifiCarShellbyBlue;
+		HifiCar[2] = HifiCarShellbySilver;
+		HifiCar[3] = HifiCarShellbyBlack;
+		HifiCar[4] = HifiCarShingle;
+		HifiCar[5] = HifiCarShingleGold;
+		HifiCar[6] = HifiCarShingleBlue;
+		HifiCar[7] = HifiCartruck;
+		HifiCar[8] = HifiCartruckBlack;
+		HifiCar[9] = HifiCartruckBrown;
 
 //		if(sceneName == "LoFi Scene")
 //		{
@@ -66,7 +94,7 @@ public class Spawner : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 // spawning Cars prefab randomly.
-		whatmodelCar = Random.Range (0,3);
+		whatmodelCar = Random.Range (0,10);
 		//Debug.Log(whatmodelCar);
 		if(sceneName == "LoFi Scene")
 		{
