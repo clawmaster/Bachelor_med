@@ -16,7 +16,7 @@ public class Arduino : MonoBehaviour {
 	private int LimitData = 10; // What second to save data. 
 	
 	
-	SerialPort stream = new SerialPort("COM6", 9600); //Set the port (com4) and the baud rate (9600, is standard on most devices)
+	SerialPort stream = new SerialPort("COM3", 9600); //Set the port (com4) and the baud rate (9600, is standard on most devices)
 	public int GSR = 0;
 	public int BPM = 0;
 
