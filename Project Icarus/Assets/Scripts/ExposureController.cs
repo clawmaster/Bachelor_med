@@ -44,91 +44,90 @@ public class ExposureController : MonoBehaviour {
 
 	void Start () {
 
-		sceneDuration = Time.time + sceneDuration;
-		introTiming = Time.time + introTiming;
+		sceneDuration = Time.timeSinceLevelLoad + sceneDuration;
+		introTiming = Time.timeSinceLevelLoad + introTiming;
 
 	}
 	
 	void Update () {
 
-		if (Time.time > sceneDuration)
+		if (Time.timeSinceLevelLoad > sceneDuration)
 		{
-
-			Application.LoadLevel(sceneToLoad);
+			Application.Quit();
 
 		}
 
-		if (Time.time > introTiming && introPlaying == false)
+		if (Time.timeSinceLevelLoad > introTiming && introPlaying == false)
 		{
 			
 			GetComponent<AudioSource>().PlayOneShot (introSound);
 			introPlaying = true;
 		}
 
-		if (Time.time > SUDS1Timing && SUDS1Playing == false)
+		if (Time.timeSinceLevelLoad > SUDS1Timing && SUDS1Playing == false)
 		{
 			
 			GetComponent<AudioSource>().PlayOneShot (SUDS1Sound);
 			SUDS1Playing = true;
 		}
 
-		if (Time.time > SUDS2Timing && SUDS2Playing == false)
+		if (Time.timeSinceLevelLoad > SUDS2Timing && SUDS2Playing == false)
 		{
 			
 			GetComponent<AudioSource>().PlayOneShot (SUDS2Sound);
 			SUDS2Playing = true;
 		}
 		
-		if (Time.time > SUDS3Timing && SUDS3Playing == false)
+		if (Time.timeSinceLevelLoad > SUDS3Timing && SUDS3Playing == false)
 		{
 			
 			GetComponent<AudioSource>().PlayOneShot (SUDS3Sound);
 			SUDS3Playing = true;
 		}
 		
-		if (Time.time > SUDS4Timing && SUDS4Playing == false)
+		if (Time.timeSinceLevelLoad > SUDS4Timing && SUDS4Playing == false)
 		{
 			
 			GetComponent<AudioSource>().PlayOneShot (SUDS4Sound);
 			SUDS4Playing = true;
 		}
 		
-		if (Time.time > SUDS5Timing && SUDS5Playing == false)
+		if (Time.timeSinceLevelLoad > SUDS5Timing && SUDS5Playing == false)
 		{
 			
 			GetComponent<AudioSource>().PlayOneShot (SUDS5Sound);
 			SUDS5Playing = true;
 		}
 		
-		if (Time.time > SUDS6Timing && SUDS6Playing == false)
+		if (Time.timeSinceLevelLoad > SUDS6Timing && SUDS6Playing == false)
 		{
 			
 			GetComponent<AudioSource>().PlayOneShot (SUDS6Sound);
 			SUDS6Playing = true;
 		}
 		
-		if (Time.time > SUDS7Timing && SUDS7Playing == false)
+		if (Time.timeSinceLevelLoad > SUDS7Timing && SUDS7Playing == false)
 		{
 			
 			GetComponent<AudioSource>().PlayOneShot (SUDS7Sound);
 			SUDS7Playing = true;
 		}
 		
-		if (Time.time > SUDS8Timing && SUDS8Playing == false)
+		if (Time.timeSinceLevelLoad > SUDS8Timing && SUDS8Playing == false)
 		{
 			
 			GetComponent<AudioSource>().PlayOneShot (SUDS8Sound);
 			SUDS8Playing = true;
 		}
 		
-		if (Time.time > SUDS9Timing && SUDS9Playing == false)
+		if (Time.timeSinceLevelLoad > SUDS9Timing && SUDS9Playing == false)
 		{
 			
 			GetComponent<AudioSource>().PlayOneShot (SUDS9Sound);
 			SUDS9Playing = true;
 		}
 
-		if (Time.time > outroTiming && outroPlaying == false)
+		if (Time.timeSinceLevelLoad > outroTiming && outroPlaying == false)
 		{
 			
 			GetComponent<AudioSource>().PlayOneShot (outroSound);
