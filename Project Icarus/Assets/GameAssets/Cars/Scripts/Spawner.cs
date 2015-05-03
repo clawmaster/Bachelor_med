@@ -9,10 +9,10 @@ public class Spawner : MonoBehaviour {
 	public Transform HifiCarShingle;
 	public Transform HifiCarShingleBlue;
 	public Transform HifiCarShingleGold;
-	public Transform HifiCarShellbyGreen;
-	public Transform HifiCarShellbyBlue;
-	public Transform HifiCarShellbySilver;
-	public Transform HifiCarShellbyBlack;
+	public Transform MustangGreen;
+	public Transform MustangYellow;
+	public Transform MustangRed;
+	public Transform MustangBlack;
 	private Transform[] HifiCar = new Transform[10];
 	public Transform LowfiCarGreen;
 	public Transform LowfiCarRed;
@@ -46,20 +46,20 @@ public class Spawner : MonoBehaviour {
 		LowfiCar[4] = LowfiCarBlack;
 		LowfiCar[5] = LowfiCarSilver;
 		LowfiCar[6] = LowfiCarWhite;
-		LowfiCar[7] = LowfiCarGrey;
-		LowfiCar[8] = LowfiCarBlue;
-		LowfiCar[9] = LowfiCarOrange;
+//		LowfiCar[7] = LowfiCarGrey;
+//		LowfiCar[8] = LowfiCarBlue;
+//		LowfiCar[9] = LowfiCarOrange;
 
-		HifiCar[0] = HifiCarShellbyGreen;
-		HifiCar[1] = HifiCarShellbyBlue;
-		HifiCar[2] = HifiCarShellbySilver;
-		HifiCar[3] = HifiCarShellbyBlack;
-		HifiCar[4] = HifiCarShingle;
-		HifiCar[5] = HifiCarShingleGold;
-		HifiCar[6] = HifiCarShingleBlue;
-		HifiCar[7] = HifiCartruck;
-		HifiCar[8] = HifiCartruckBlack;
-		HifiCar[9] = HifiCartruckBrown;
+		HifiCar[0] = MustangGreen;
+		HifiCar[1] = MustangYellow;
+		HifiCar[2] = MustangRed;
+		HifiCar[3] = MustangBlack;
+		HifiCar[4] = HifiCartruck;
+		HifiCar[5] = HifiCartruckBlack;
+		HifiCar[6] = HifiCartruckBrown;
+//		HifiCar[7] = HifiCarShingle;
+//		HifiCar[8] = HifiCarShingleGold;
+//		HifiCar[9] = HifiCarShingleBlue;
 
 //		if(sceneName == "LoFi Scene")
 //		{
@@ -94,7 +94,7 @@ public class Spawner : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 // spawning Cars prefab randomly.
-		whatmodelCar = Random.Range (0,10);
+		whatmodelCar = Random.Range (0,7);
 		//Debug.Log(whatmodelCar);
 		if(sceneName == "LoFi Scene")
 		{
