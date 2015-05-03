@@ -13,12 +13,13 @@ public class Arduino : MonoBehaviour {
 	public bool wait = true; 
 	//Recieves the data into string array. 
 	private string[] Recieved;
-	private int LimitData = 10; // What second to save data. 
+	private int LimitData = 13; // What second to save data. 
 	
 	
-	SerialPort stream = new SerialPort("COM3", 9600); //Set the port (com4) and the baud rate (9600, is standard on most devices)
+	SerialPort stream = new SerialPort("COM7", 9600); //Set the port (com4) and the baud rate (9600, is standard on most devices)
 	public int GSR = 0;
 	public int BPM = 0;
+	public int TOB = 0; //Time of the last beat. in miliseconds
 
 	//Pathway
 	private string filename;
@@ -28,16 +29,16 @@ public class Arduino : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//getting files in directory
-		var info = new DirectoryInfo(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + @"/Data/");
+		var info = new DirectoryInfo(Application.dataPath + @"/Data/");
 		var fileInfo = info.GetFiles();
-		foreach (var file in fileInfo) Debug.Log(file);
+		//foreach (var file in fileInfo) Debug.Log(file);
 
 		//getting level name
 		filename = Application.loadedLevelName;
 		Debug.Log("Length of fileINfo " + fileInfo.Length);
-		filename = filename + "" + ((fileInfo.Length/2)+1) + ".xml";
+		filename = filename + "" + ((fileInfo.Length)+1) + ".xml";
 
-		Debug.Log (filename);
+		//Debug.Log (filename);
 
 
 		stream.Open(); //Open the Serial Stream.
@@ -61,10 +62,11 @@ public class Arduino : MonoBehaviour {
 			// assigning the values
 			bool BGSR = int.TryParse(Recieved[1], out GSR);
 			bool BBPM = int.TryParse(Recieved[3], out BPM);
+			bool BTOB = int.TryParse(Recieved[5], out TOB);
 
-			if( !BGSR || !BBPM )
+			if( !BGSR || !BBPM || !BTOB)
 			{
-				Debug.Log("At time: " + Time.time + "one of the values was not a number");
+				//Debug.Log("At time: " + Time.timeSinceLevelLoad + "one of the values was not a number");
 			}
 
 
@@ -75,9 +77,9 @@ public class Arduino : MonoBehaviour {
 
 
 		}
-		if (Time.time>LimitData)
+		if (Time.timeSinceLevelLoad>LimitData)
 		{
-			LimitData = LimitData+1;
+			//LimitData = LimitData+1;
 			WriteToXml();
 		}
 
@@ -96,19 +98,19 @@ public class Arduino : MonoBehaviour {
 		
 //		string filepath = Application.dataPath + @"/Data/xmldata2.xml";
 //		Debug.Log (filepath);
-		string filepath = Application.dataPath + (System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments) + @"/Data/") ;
+		string filepath = Application.dataPath + (@"/Data/" + filename + ".xml") ;
 		XmlDocument xmlDoc = new XmlDocument();
 		
 		if(File.Exists (filepath))
 		{
-			Debug.Log("im inside load part trying to write new value");
+			//Debug.Log("im inside load part trying to write new value");
 			xmlDoc.Load(filepath);
 			
 			XmlElement elmRoot = xmlDoc.DocumentElement; // create the rotation node.
 			xmlDoc.AppendChild(elmRoot); // make the transform node the parent.
 
 			XmlNode TimeStamp = xmlDoc.CreateElement("Time"); // create the x node.
-			TimeStamp.InnerText = SecondsToString(Time.time); // apply to the node text the values of the variable.
+			TimeStamp.InnerText = "" + Time.timeSinceLevelLoad; // apply to the node text the values of the variable.
 
 			XmlNode valueGSR = xmlDoc.CreateElement("GSR"); // create the x node.
 			valueGSR.InnerText = Recieved[1]; // apply to the node text the values of the variable.
@@ -116,34 +118,41 @@ public class Arduino : MonoBehaviour {
 			XmlNode valueBPM = xmlDoc.CreateElement("BPM"); // create the y node.
 			valueBPM.InnerText = Recieved[3]; // apply to the node text the values of the variable.
 
+			XmlNode valueTOB = xmlDoc.CreateElement("TOB"); // create the y node.
+			valueTOB.InnerText = Recieved[5]; // apply to the node text the values of the variable.
+
 
 			elmRoot.AppendChild(TimeStamp);
 			TimeStamp.AppendChild(valueGSR); // make the rotation node the parent.
 			TimeStamp.AppendChild(valueBPM); // make the rotation node the parent.
+			TimeStamp.AppendChild(valueTOB); // make the rotation node the parent.
 
 			xmlDoc.Save(filepath); // save file.
 
 		}
 		else
 		{
-			Debug.Log("im inside write scripted trying to make new file");
+			//Debug.Log("im inside write scripted trying to make new file");
 			
 			XmlElement elmRoot = xmlDoc.CreateElement("User"); // create the rotation node.
 			xmlDoc.AppendChild(elmRoot); // make the transform node the parent.
 			
 			XmlNode TimeStamp = xmlDoc.CreateElement("Time"); // create the x node.
-			TimeStamp.InnerText = SecondsToString(Time.time); // apply to the node text the values of the variable.
+			TimeStamp.InnerText = "" + Time.timeSinceLevelLoad; // apply to the node text the values of the variable.
 			
 			XmlNode valueGSR = xmlDoc.CreateElement("GSR"); // create the x node.
 			valueGSR.InnerText = Recieved[1]; // apply to the node text the values of the variable.
 			
 			XmlNode valueBPM = xmlDoc.CreateElement("BPM"); // create the y node.
 			valueBPM.InnerText = Recieved[3]; // apply to the node text the values of the variable.
-			
+
+			XmlNode valueTOB = xmlDoc.CreateElement("TOB"); // create the y node.
+			valueTOB.InnerText = Recieved[5]; // apply to the node text the values of the variable.
 			
 			elmRoot.AppendChild(TimeStamp);
 			TimeStamp.AppendChild(valueGSR); // make the rotation node the parent.
 			TimeStamp.AppendChild(valueBPM); // make the rotation node the parent.
+			TimeStamp.AppendChild(valueTOB); // make the rotation node the parent.
 			
 			
 			xmlDoc.Save(filepath); // save file.
@@ -156,6 +165,6 @@ public class Arduino : MonoBehaviour {
 		float minutes = sec / 60;
 		float seconds = sec % 60;
 		
-		return string.Format("{0:00}:{1:00}", minutes, seconds);
+		return string.Format("{0:00}:{20:00}", minutes, seconds);
 	}
 }
