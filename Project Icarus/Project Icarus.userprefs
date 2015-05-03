@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ExposureController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GameAssets\Streets\Pedestrian\Movement.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameController.cs" Line="26" Column="42" />
-      <File FileName="Assets\Scripts\ExposureController.cs" Line="56" Column="4" />
+      <File FileName="Assets\GameAssets\Streets\Pedestrian\pedestrianSpawner.cs" Line="33" Column="26" />
+      <File FileName="Assets\Scripts\GameController.cs" Line="36" Column="39" />
+      <File FileName="Assets\GameAssets\Streets\Pedestrian\Movement.cs" Line="45" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

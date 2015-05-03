@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour {
 	public Vector3 goal;
 	NavMeshAgent agent;
 	private Vector3 lastPos = new Vector3(0,0,0);
+	private int counter;
 
 	// Use this for initialization
 	void Start () {
@@ -36,7 +37,14 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(lastPos == transform.position)
+		if (lastPos == transform.position) {
+			counter++;
+		}
+		else 
+		{
+			counter = 0;
+		}
+		if(counter > 20)
 		{
 			Destroy(this.gameObject);
 		}
