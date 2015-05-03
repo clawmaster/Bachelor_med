@@ -110,7 +110,7 @@ public class Spawner : MonoBehaviour {
 		{
 			randomSpawn = Random.Range (0, 12);
 			Instantiate(car,spawnPoints[randomSpawn],Quaternion.identity);
-			timer = Time.time + 1;
+			timer = Time.time + 2;
 		}
 
 	
