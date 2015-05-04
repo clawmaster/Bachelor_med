@@ -13,10 +13,10 @@ public class Arduino : MonoBehaviour {
 	public bool wait = true; 
 	//Recieves the data into string array. 
 	private string[] Recieved;
-	private int LimitData = 13; // What second to save data. 
+	private int LimitData = 10; // What second to save data. 
 	
 	
-	SerialPort stream = new SerialPort("COM7", 9600); //Set the port (com4) and the baud rate (9600, is standard on most devices)
+	SerialPort stream = new SerialPort("COM3", 9600); //Set the port (com4) and the baud rate (9600, is standard on most devices)
 	public int GSR = 0;
 	public int BPM = 0;
 	public int TOB = 0; //Time of the last beat. in miliseconds
@@ -70,7 +70,7 @@ public class Arduino : MonoBehaviour {
 			}
 
 
-			//writes to XML document
+			//writes to XML document b 
 
 
 			stream.BaseStream.Flush(); //Clear the serial information so we assure we get new information.
@@ -79,7 +79,7 @@ public class Arduino : MonoBehaviour {
 		}
 		if (Time.timeSinceLevelLoad>LimitData)
 		{
-			//LimitData = LimitData+1;
+			LimitData = LimitData+3;
 			WriteToXml();
 		}
 
