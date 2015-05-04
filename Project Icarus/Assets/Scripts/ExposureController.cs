@@ -44,6 +44,8 @@ public class ExposureController : MonoBehaviour {
 
 	void Start () {
 
+		Application.targetFrameRate = 60;
+
 		sceneDuration = Time.timeSinceLevelLoad + sceneDuration;
 		introTiming = Time.timeSinceLevelLoad + introTiming;
 
