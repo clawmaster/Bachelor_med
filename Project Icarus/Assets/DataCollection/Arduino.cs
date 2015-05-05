@@ -77,7 +77,7 @@ public class Arduino : MonoBehaviour {
 
 			stream.BaseStream.Flush(); //Clear the serial information so we assure we get new information.
 
-				LimitData = LimitData+3;
+				LimitData = LimitData+1;
 				WriteToXml();
 
 			}
