@@ -45,7 +45,7 @@ public class Arduino : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
 		//Debug.Log (Time.time);
 		if(wait)
@@ -54,9 +54,11 @@ public class Arduino : MonoBehaviour {
 		}
 		else
 		{
-		string value = stream.ReadLine(); //Read the information
-		Recieved = value.Split(','); //My arduino script returns a 4 part value (IE: GSR ,12, BPM ,30)
-		//Debug.Log(Recieved[0]);Debug.Log(Recieved[1]);Debug.Log(Recieved[2]);Debug.Log(Recieved[3]);
+			if (Time.timeSinceLevelLoad>LimitData)
+			{
+			string value = stream.ReadLine(); //Read the information
+			Recieved = value.Split(','); //My arduino script returns a 4 part value (IE: GSR ,12, BPM ,30)
+			//Debug.Log(Recieved[0]);Debug.Log(Recieved[1]);Debug.Log(Recieved[2]);Debug.Log(Recieved[3]);
 
 
 			// assigning the values
@@ -75,13 +77,12 @@ public class Arduino : MonoBehaviour {
 
 			stream.BaseStream.Flush(); //Clear the serial information so we assure we get new information.
 
+				LimitData = LimitData+3;
+				WriteToXml();
 
+			}
 		}
-		if (Time.timeSinceLevelLoad>LimitData)
-		{
-			LimitData = LimitData+3;
-			WriteToXml();
-		}
+
 
 
 	}
