@@ -41,7 +41,7 @@ public class Arduino : MonoBehaviour {
 		//Debug.Log (filename);
 
 
-		stream.Open(); //Open the Serial Stream.
+		//stream.Open(); //Open the Serial Stream.
 	}
 	
 	// Update is called once per frame
@@ -54,9 +54,11 @@ public class Arduino : MonoBehaviour {
 		}
 		else
 		{
+			stream.Open(); //Open the Serial Stream.
 		string value = stream.ReadLine(); //Read the information
 		Recieved = value.Split(','); //My arduino script returns a 4 part value (IE: GSR ,12, BPM ,30)
 		//Debug.Log(Recieved[0]);Debug.Log(Recieved[1]);Debug.Log(Recieved[2]);Debug.Log(Recieved[3]);
+			stream.Close();
 
 
 			// assigning the values

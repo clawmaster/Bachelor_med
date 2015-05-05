@@ -1,9 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\DataCollection\Arduino.cs">
     <Files>
-      <File FileName="Assets\DataCollection\Arduino.cs" Line="82" Column="27" />
+      <File FileName="Assets\DataCollection\Arduino.cs" Line="16" Column="56" />
       <File FileName="Assets\Scripts\ExposureController.cs" Line="1" Column="1" />
+      <File FileName="Assets\OVR\Scripts\OVRManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\OVR\Scripts\Util\OVRScreenFade.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\backup\Project Icarus\Assets\OVR\Scripts\Util\OVRScreenFade.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
