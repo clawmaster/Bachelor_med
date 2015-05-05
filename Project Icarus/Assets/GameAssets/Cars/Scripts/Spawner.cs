@@ -60,15 +60,7 @@ public class Spawner : MonoBehaviour {
 //		HifiCar[7] = HifiCarShingle;
 //		HifiCar[8] = HifiCarShingleGold;
 //		HifiCar[9] = HifiCarShingleBlue;
-
-//		if(sceneName == "LoFi Scene")
-//		{
-//			car = LowfiCar[whatmodelCar];
-//		}
-//		else
-//		{
-//			car = HifiCar[whatmodelCar];
-//		}
+		
 
 		//outer lane spawn
 		spawnPoints [0] = new Vector3 (-123, 0, 149);
@@ -94,16 +86,16 @@ public class Spawner : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 // spawning Cars prefab randomly.
-		whatmodelCar = Random.Range (0,7);
+		whatmodelCar = Random.Range (0,3);
 		//Debug.Log(whatmodelCar);
-		if(sceneName == "LoFi Scene")
+		if(sceneName != "LoFi Scene")
 		{
 			car = LowfiCar[whatmodelCar];
 		}
-		else
-		{
-			car = HifiCar[whatmodelCar];
-		}
+//		else
+//		{
+//			car = HifiCar[whatmodelCar];
+//		}
 
 		//making timer that spawns car.
 		if (timer < Time.time) 
